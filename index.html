@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tarjeta de Presentación</title>
-<meta name="description" content="Tarjeta de presentación digital de Ana Maria Arias">
+<meta name="description" content="Tarjeta de presentación digital">
 <!-- Vista previa al compartir el enlace por WhatsApp / redes -->
-<meta property="og:title" content="Ana Maria Arias">
+<meta property="og:title" content="Adrian Iturbide">
 <meta property="og:description" content="Gerente Admistrativa Colomich SAS">
 <!-- <meta property="og:image" content="https://TU-URL/foto.jpg"> -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+<!-- Ícono de pestaña: tarjeta de contacto -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='4' y='16' width='92' height='68' rx='12' fill='%23C8483D'/><circle cx='32' cy='44' r='11' fill='%23fff'/><path d='M16 70a16 14 0 0 1 32 0z' fill='%23fff'/><rect x='56' y='36' width='28' height='7' rx='3.5' fill='%23fff'/><rect x='56' y='50' width='22' height='6' rx='3' fill='%23fff' opacity='.75'/><rect x='56' y='62' width='26' height='6' rx='3' fill='%23fff' opacity='.75'/></svg>">
 
 <style>
   /* ============ TOKENS DE COLOR ============ */
@@ -203,29 +204,29 @@
    1) EDITA SOLO ESTE BLOQUE CON TUS DATOS
    ===================================================================== */
 const CONFIG = {
-  firstName: "Ana Maria",
-  lastName:  "Arias",
-  photo: "",                       // ej. "foto.jpg" (déjalo vacío para mostrar iniciales)
+  firstName: "Adrián",
+  lastName:  "Iturbide",
+  photo: "logo.png",                       // ej. "foto.jpg" (déjalo vacío para mostrar iniciales)
   org: "Colomich SAS",
-  email: "gerenciaadministrativa@colomichsas.com",
+  email: "gerencia@colomichsas.com",
   website: "https://www.colomichsas.com/",
   linkedin: "https://linkedin.com/in/tu-usuario",
   // Datos por país (formato internacional). Deja un campo vacío ("") para ocultarlo.
   countries: [
     { flag: "co", name: { es: "Colombia", en: "Colombia" },
-      phone: "+57 300 000 0000", whatsapp: "+57 300 000 0000",
+      phone: "+57 310 667 7306", whatsapp: "+52 443 328 3275",
       city: "Pereira", region: "Risaralda" },
     { flag: "mx", name: { es: "México", en: "Mexico" },
-      phone: "+52 55 0000 0000", whatsapp: "+52 1 55 0000 0000",
-      city: "Ciudad de México", region: "CDMX" }
+      phone: "+52 443 328 3275", whatsapp: "+52 443 328 3275",
+      city: "Morelia", region: "México" }
   ],
-  fileName: "ana-maria-arias.vcf"
+  fileName: "adrian-iturbide.vcf"
 };
 
 /* Textos en ambos idiomas */
 const TEXT = {
   es: {
-    role: "Gerente Administrativa",
+    role: "Gerente",
     save: "Guardar contacto",
     call: "Llamar", whatsapp: "WhatsApp", email: "Correo",
     website: "Sitio web", linkedin: "LinkedIn",
@@ -235,7 +236,7 @@ const TEXT = {
     close: "Cerrar", copied: "Enlace copiado", saved: "Contacto descargado"
   },
   en: {
-    role: "Administrative Manager",
+    role: "Manager",
     save: "Save contact",
     call: "Call", whatsapp: "WhatsApp", email: "Email",
     website: "Website", linkedin: "LinkedIn",
