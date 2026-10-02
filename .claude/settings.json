@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/check-fincas.js)",
+      "Bash(npm install:*)",
+      "Bash(node scripts/check-fincas-anio.js)",
+      "Bash(node -e ':*)",
+      "Bash(mkdir -p backend/database/migrations backend/database/utils backend/database/archive)",
+      "Bash(mv backend/scripts/create_plan_trabajo_tables.sql backend/database/migrations/001_create_plan_trabajo_tables.sql)",
+      "Bash(mv backend/scripts/create_plan_mensual_tables.sql backend/database/migrations/002_create_plan_mensual_tables.sql)",
+      "Bash(mv backend/sql/create_permissions_system.sql backend/database/migrations/003_create_permissions_system.sql)",
+      "Bash(mv backend/scripts/migrate-roles.sql backend/database/migrations/004_migrate_roles.sql)",
+      "Bash(mkdir -p scripts/deploy scripts/db scripts/tools)",
+      "Bash(mv scripts/deploy.sh scripts/deploy/deploy.sh)",
+      "Bash(mv scripts/reset-passwords.js scripts/db/reset-passwords.js)",
+      "Bash(mv scripts/check-dashboard-data.js scripts/db/check-dashboard-data.js)",
+      "Bash(mv scripts/check-fincas.js scripts/db/check-fincas.js)",
+      "Bash(mkdir -p pages)",
+      "Bash(mv components/LoginForm.js pages/)",
+      "Bash(mv components/RegistroForm.js pages/)",
+      "Bash(mv components/Database.js pages/)",
+      "Bash(mv components/Usuarios.js pages/)",
+      "Bash(mkdir -p components/layout components/routing components/tables components/modals components/metrics components/calendar components/export)",
+      "Bash(mv components/Navbar.js components/layout/)",
+      "Bash(mv components/Footer.js components/layout/)",
+      "Bash(mv components/ProtectedRoute.js components/routing/)",
+      "Bash(mv components/TableComponent.js components/tables/)",
+      "Bash(grep -n \"from '\\\\./Navbar\\\\|from '\\\\./Footer\\\\|from '\\\\./EditDeleteModal\\\\|from '\\\\./TableComponent\\\\|from '\\\\./DashboardTable\\\\|from '\\\\./MetricCard\\\\|from '\\\\./PlanMensualCalendario\\\\|from '\\\\./ExportToExcel\\\\|from '\\\\./ExportPlanesToExcel\\\\|from '\\\\./ExportPlanMensualExcel\\\\|from '\\\\./ExportToExcelNew\" \"c:/Users/licen/OneDrive/Imágenes/Operamich/1.0/frontend/src/pages/\"*.js \"c:/Users/licen/OneDrive/Imágenes/Operamich/1.0/frontend/src/components/\"**/*.js)"
+    ]
+  }
+}
