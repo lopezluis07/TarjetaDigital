@@ -75,6 +75,13 @@
     font: 600 40px/1 var(--serif);
   }
   .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  /* Cuando se muestra el logo: completo, sin recortes, sobre blanco */
+  .avatar.is-logo {
+    width: 150px; height: 150px; border-radius: 24px; border: 0;
+    background: #fff; padding: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+  }
+  .avatar.is-logo img { object-fit: contain; }
 
   .identity { padding: 16px 24px 4px; }
   .name {
@@ -206,7 +213,8 @@
 const CONFIG = {
   firstName: "Adrián",
   lastName:  "Iturbide",
-  photo: "logo.png",                       // ej. "foto.jpg" (déjalo vacío para mostrar iniciales)
+  photo: "",                       // ej. "foto.jpg" — si hay foto, se muestra en lugar del logo
+  logo: "logo.png",                // se muestra completo cuando no hay foto (vacío = iniciales)
   org: "Colomich SAS",
   email: "gerencia@colomichsas.com",
   website: "https://www.colomichsas.com/",
@@ -307,8 +315,10 @@ function render() {
 
 function init() {
   $("name").textContent = fullName;
-  $("avatar").innerHTML = CONFIG.photo
-    ? `<img src="${CONFIG.photo}" alt="${fullName}">`
+  const img = CONFIG.photo || CONFIG.logo;
+  $("avatar").classList.toggle("is-logo", !CONFIG.photo && !!CONFIG.logo);
+  $("avatar").innerHTML = img
+    ? `<img src="${img}" alt="${CONFIG.photo ? fullName : CONFIG.org}">`
     : (CONFIG.firstName[0] + CONFIG.lastName[0]);
   render();
 }
