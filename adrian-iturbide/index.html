@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ====== 1) DATOS PARA LA PESTAÑA Y LA VISTA PREVIA DE WHATSAPP ====== -->
+<title>Adrián Iturbide · Colomich SAS</title>
+<meta name="description" content="Gerente General · Colomich SAS">
+<meta property="og:title" content="Adrián Iturbide">
+<meta property="og:description" content="Gerente General · Colomich SAS">
+<meta property="og:url" content="https://tarjeta.operamich.com/adrian-iturbide/">
+<meta property="og:image" content="https://tarjeta.operamich.com/assets/img/logo.png">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg">
+<link rel="stylesheet" href="/assets/css/tarjeta.css">
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* ====== 2) DATOS DE LA TARJETA ====== */
+window.CONFIG = {
+  firstName: "Adrián",
+  lastName:  "Iturbide",
+  role: { es: "Gerente General", en: "General Manager" },
+  photo: "",
+  org: "Colomich SAS",
+  email: "gerencia@colomichsas.com",
+  website: "https://www.colomichsas.com/",
+  linkedin: "",                  // pendiente: pegar la URL cuando la envíe
+  countries: [
+    { flag: "co", name: { es: "Colombia", en: "Colombia" },
+      phone: "+57 310 667 7306", whatsapp: "+52 443 328 3275",
+      city: "Pereira", region: "Risaralda" },
+    { flag: "mx", name: { es: "México", en: "Mexico" },
+      phone: "+52 443 328 3275", whatsapp: "+52 443 328 3275",
+      city: "Morelia", region: "Michoacán" }
+  ]
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="/assets/js/tarjeta.js"></script>
+</body>
+</html>

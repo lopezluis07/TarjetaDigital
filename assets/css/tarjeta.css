@@ -1,0 +1,143 @@
+/* Diseño compartido de todas las tarjetas — editar aquí cambia todas */
+/* ============ TOKENS DE COLOR ============ */
+:root {
+  --paper: #17241C;      /* fondo oscuro (contraste con la tarjeta) */
+  --surface: #FFFFFF;    /* tarjeta */
+  --ink: #24342A;        /* texto principal */
+  --muted: #6F7F74;      /* texto secundario */
+  --line: #E4EAE1;       /* divisores */
+  --accent: #C8483D;     /* rojo cereza de café */
+  --accent-ink: #FFFFFF;
+  --leaf: #5C9070;       /* verde hoja */
+  --contour: rgba(92,144,112,.20);
+
+  --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Siempre en tonos claros: no se aplica el modo oscuro del sistema */
+:root { color-scheme: light; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; min-height: 100%;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  max-width: 440px; margin: 0 auto; min-height: 100vh;
+  background: var(--surface);
+  display: flex; flex-direction: column;
+}
+@media (min-width: 520px) {
+  body { padding: 32px 16px; }
+  .card { min-height: auto; border-radius: 22px; overflow: hidden;
+          box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+}
+
+/* ============ CABECERA CON CURVAS DE NIVEL ============ */
+.hero { position: relative; padding: 20px 24px 0; }
+.hero svg.contours {
+  position: absolute; inset: 0; width: 100%; height: 170px;
+  color: var(--contour); pointer-events: none;
+}
+.topbar { position: relative; display: flex; justify-content: flex-end; gap: 8px; }
+.chip {
+  font: 600 13px/1 var(--sans); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  padding: 8px 12px; border-radius: 999px; cursor: pointer;
+}
+.avatar {
+  position: relative; width: 112px; height: 112px; margin-top: 44px;
+  border-radius: 50%; border: 4px solid var(--surface);
+  background: var(--leaf); color: var(--surface);
+  display: grid; place-items: center; overflow: hidden;
+  font: 600 40px/1 var(--serif);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+/* Cuando se muestra el logo: completo, sin recortes, sobre blanco */
+.avatar.is-logo {
+  width: 150px; height: 150px; border-radius: 24px; border: 0;
+  background: #fff; padding: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+.avatar.is-logo img { object-fit: contain; }
+
+.identity { padding: 16px 24px 4px; }
+.name {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(38px, 11vw, 46px); line-height: 1.02;
+  letter-spacing: -0.015em; margin: 0;
+}
+.role { margin: 10px 0 0; font-size: 17px; color: var(--ink); }
+.org { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+
+/* ============ BOTÓN PRINCIPAL ============ */
+.primary {
+  margin: 24px 24px 8px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--accent); color: var(--accent-ink);
+  border: 0; border-radius: 14px; padding: 16px;
+  font: 600 17px/1 var(--sans); cursor: pointer; text-decoration: none;
+}
+.primary:active { transform: scale(.985); }
+
+/* ============ LISTA DE CONTACTO ============ */
+.group-title {
+  display: flex; align-items: center; gap: 10px;
+  margin: 22px 24px 2px; font: 700 12px/1 var(--sans);
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.group-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.group-title small { font-weight: 500; letter-spacing: .04em; text-transform: none; }
+.flag { width: 24px; height: 16px; border-radius: 3px; flex: none;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
+.links { list-style: none; margin: 4px 0 0; padding: 0 24px; }
+.links li + li { border-top: 1px solid var(--line); }
+.links a {
+  display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 14px;
+  padding: 14px 0; color: inherit; text-decoration: none;
+}
+.icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: color-mix(in srgb, var(--leaf) 14%, transparent); color: var(--leaf);
+}
+.icon svg { width: 20px; height: 20px; }
+.links .label { display: block; font-weight: 600; }
+.links .value { display: block; color: var(--muted); font-size: 14px;
+                overflow-wrap: anywhere; }
+
+/* ============ PIE ============ */
+.footer { margin-top: auto; padding: 28px 24px 28px; display: flex; gap: 10px; }
+.secondary {
+  flex: 1; padding: 14px; border-radius: 12px; cursor: pointer;
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+  font: 600 15px/1 var(--sans);
+}
+
+/* ============ MODAL QR ============ */
+dialog {
+  border: 0; border-radius: 20px; padding: 28px; max-width: 320px; width: calc(100% - 40px);
+  background: var(--surface); color: var(--ink); text-align: center;
+}
+dialog::backdrop { background: rgba(10,18,13,.6); }
+#qr { background: #fff; padding: 14px; border-radius: 12px; display: inline-block; }
+#qr img, #qr canvas { display: block; width: 220px; height: 220px; }
+dialog p { color: var(--muted); font-size: 14px; margin: 14px 0 18px; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 20px); opacity: 0; transition: .25s;
+  background: var(--ink); color: var(--surface); padding: 10px 16px; border-radius: 10px;
+  font-size: 14px; pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

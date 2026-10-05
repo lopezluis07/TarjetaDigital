@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ====== 1) DATOS PARA LA PESTAÑA Y LA VISTA PREVIA DE WHATSAPP ====== -->
+<title>Nombre Apellido · Colomich SAS</title>
+<meta name="description" content="Cargo en Colomich SAS">
+<meta property="og:title" content="Nombre Apellido">
+<meta property="og:description" content="Cargo en Colomich SAS">
+<meta property="og:url" content="https://tarjeta.operamich.com/nombre-apellido/">
+<meta property="og:image" content="https://tarjeta.operamich.com/assets/img/logo.png">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg">
+<link rel="stylesheet" href="/assets/css/tarjeta.css">
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* ====== 2) DATOS DE LA TARJETA ====== */
+window.CONFIG = {
+  firstName: "Nombre",
+  lastName:  "Apellido",
+  role: { es: "Cargo en español", en: "Title in English" },
+  photo: "",                     // "foto.jpg" (en esta carpeta) o vacío para mostrar el logo
+  org: "Colomich SAS",
+  email: "correo@colomichsas.com",
+  website: "https://www.colomichsas.com/",
+  linkedin: "",                  // vacío = no se muestra
+  // Un bloque por país. Banderas disponibles: co, mx, us (agrega más en tarjeta.js)
+  countries: [
+    { flag: "co", name: { es: "Colombia", en: "Colombia" },
+      phone: "+57 300 000 0000", whatsapp: "+57 300 000 0000",
+      city: "Armenia", region: "Quindío" }
+  ]
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="/assets/js/tarjeta.js"></script>
+</body>
+</html>
